@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="TrainSet" EntityType="Model1.Store.TrainSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SitSet" EntityType="Model1.Store.SitSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TicketSet" EntityType="Model1.Store.TicketSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="TrainSit" Association="Model1.Store.TrainSit">
+      <End Role="Train" EntitySet="TrainSet" />
+      <End Role="Sit" EntitySet="SitSet" />
+    </AssociationSet>
+    <AssociationSet Name="SitTicket" Association="Model1.Store.SitTicket">
+      <End Role="Sit" EntitySet="SitSet" />
+      <End Role="Ticket" EntitySet="TicketSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TrainSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TNumber" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SitSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SitNum" Type="int" Nullable="false" />
+    <Property Name="trainID" Type="int" Nullable="false" />
+    <Property Name="TrainId1" Type="int" Nullable="false" />
+    <Property Name="Ticket_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TicketSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Owner" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="TrainSit">
+    <End Role="Train" Type="Model1.Store.TrainSet" Multiplicity="1" />
+    <End Role="Sit" Type="Model1.Store.SitSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Train">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sit">
+        <PropertyRef Name="TrainId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SitTicket">
+    <End Role="Sit" Type="Model1.Store.SitSet" Multiplicity="*" />
+    <End Role="Ticket" Type="Model1.Store.TicketSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Ticket">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sit">
+        <PropertyRef Name="Ticket_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

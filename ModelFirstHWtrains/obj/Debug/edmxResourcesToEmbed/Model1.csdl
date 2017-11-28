@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TrainSet" EntityType="Model1.Train" />
+    <EntitySet Name="SitSet" EntityType="Model1.Sit" />
+    <EntitySet Name="TicketSet" EntityType="Model1.Ticket" />
+    <AssociationSet Name="TrainSit" Association="Model1.TrainSit">
+      <End Role="Train" EntitySet="TrainSet" />
+      <End Role="Sit" EntitySet="SitSet" />
+    </AssociationSet>
+    <AssociationSet Name="SitTicket" Association="Model1.SitTicket">
+      <End Role="Sit" EntitySet="SitSet" />
+      <End Role="Ticket" EntitySet="TicketSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Train">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TNumber" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Sit" Relationship="Model1.TrainSit" FromRole="Train" ToRole="Sit" />
+  </EntityType>
+  <EntityType Name="Sit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SitNum" Type="Int32" Nullable="false" />
+    <Property Name="trainID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Train" Relationship="Model1.TrainSit" FromRole="Sit" ToRole="Train" />
+    <Property Name="TrainId1" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Ticket" Relationship="Model1.SitTicket" FromRole="Sit" ToRole="Ticket" />
+  </EntityType>
+  <EntityType Name="Ticket">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Owner" Type="String" Nullable="false" />
+    <NavigationProperty Name="Sit" Relationship="Model1.SitTicket" FromRole="Ticket" ToRole="Sit" />
+  </EntityType>
+  <Association Name="TrainSit">
+    <End Type="Model1.Train" Role="Train" Multiplicity="1" />
+    <End Type="Model1.Sit" Role="Sit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Train">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sit">
+        <PropertyRef Name="TrainId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SitTicket">
+    <End Type="Model1.Sit" Role="Sit" Multiplicity="1" />
+    <End Type="Model1.Ticket" Role="Ticket" Multiplicity="1" />
+  </Association>
+</Schema>

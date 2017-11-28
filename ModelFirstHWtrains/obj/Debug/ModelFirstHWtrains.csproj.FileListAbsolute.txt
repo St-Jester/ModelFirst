@@ -1,0 +1,13 @@
+C:\Users\Kateryna\Documents\Programming\Programming\Homework\ADONET\ModelFirstHWtrains\ModelFirstHWtrains\bin\Debug\ModelFirstHWtrains.exe.config
+C:\Users\Kateryna\Documents\Programming\Programming\Homework\ADONET\ModelFirstHWtrains\ModelFirstHWtrains\bin\Debug\ModelFirstHWtrains.exe
+C:\Users\Kateryna\Documents\Programming\Programming\Homework\ADONET\ModelFirstHWtrains\ModelFirstHWtrains\bin\Debug\ModelFirstHWtrains.pdb
+C:\Users\Kateryna\Documents\Programming\Programming\Homework\ADONET\ModelFirstHWtrains\ModelFirstHWtrains\bin\Debug\EntityFramework.dll
+C:\Users\Kateryna\Documents\Programming\Programming\Homework\ADONET\ModelFirstHWtrains\ModelFirstHWtrains\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Kateryna\Documents\Programming\Programming\Homework\ADONET\ModelFirstHWtrains\ModelFirstHWtrains\bin\Debug\EntityFramework.xml
+C:\Users\Kateryna\Documents\Programming\Programming\Homework\ADONET\ModelFirstHWtrains\ModelFirstHWtrains\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kateryna\Documents\Programming\Programming\Homework\ADONET\ModelFirstHWtrains\ModelFirstHWtrains\obj\Debug\ModelFirstHWtrains.csprojResolveAssemblyReference.cache
+C:\Users\Kateryna\Documents\Programming\Programming\Homework\ADONET\ModelFirstHWtrains\ModelFirstHWtrains\obj\Debug\ModelFirstHWtrains.Form1.resources
+C:\Users\Kateryna\Documents\Programming\Programming\Homework\ADONET\ModelFirstHWtrains\ModelFirstHWtrains\obj\Debug\ModelFirstHWtrains.Properties.Resources.resources
+C:\Users\Kateryna\Documents\Programming\Programming\Homework\ADONET\ModelFirstHWtrains\ModelFirstHWtrains\obj\Debug\ModelFirstHWtrains.csproj.GenerateResource.Cache
+C:\Users\Kateryna\Documents\Programming\Programming\Homework\ADONET\ModelFirstHWtrains\ModelFirstHWtrains\obj\Debug\ModelFirstHWtrains.exe
+C:\Users\Kateryna\Documents\Programming\Programming\Homework\ADONET\ModelFirstHWtrains\ModelFirstHWtrains\obj\Debug\ModelFirstHWtrains.pdb
